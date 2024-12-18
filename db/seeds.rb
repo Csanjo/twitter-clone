@@ -16,6 +16,8 @@ User.destroy_all
 
 p "Creating Users"
 
+User.create!(username: "coolcv", email: "christian@me.com", password: "123123")
+
 10.times do
   name = Faker::Twitter.screen_name
   User.create!(username: name, email: "#{name}@mail.com", password: "123123")
@@ -24,12 +26,12 @@ end
 p "Creating Tweets"
 
 20.times do
-  Tweet.create!(user: User.all[rand(0..9)], description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4))
+  Tweet.create!(user: User.all[rand(0..10)], description: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4))
 end
 
 p "Creating Followings"
 
-30.times do
-  Following.create!(followee: User.all[rand(0..9)], follower: User.all[rand(0..9)])
+80.times do
+  Following.create!(followee: User.all[rand(0..10)], follower: User.all[rand(0..10)])
 end
 p "Finished"
