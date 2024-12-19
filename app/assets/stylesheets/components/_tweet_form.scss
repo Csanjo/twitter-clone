@@ -1,0 +1,73 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the form */
+.tweet-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Header with profile picture and textarea */
+.tweet-form-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular profile picture */
+  margin-right: 15px;
+}
+
+.tweet-input {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none; /* Disable textarea resizing */
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.tweet-input:focus {
+  border-color: #1da1f2; /* Twitter's blue color */
+}
+
+/* Footer with Tweet button */
+.tweet-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.tweet-button {
+  background-color: #1da1f2; /* Twitter blue color */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tweet-button:hover {
+  background-color: #1991d0; /* Darker blue on hover */
+}
+
+.tweet-button:disabled {
+  background-color: #a5c8f1; /* Disabled button color */
+  cursor: not-allowed;
+}

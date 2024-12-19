@@ -1,0 +1,85 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the tweet card */
+.tweet-card {
+  background-color: #ffffff; /* White background */
+  border: 1px solid black;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tweet header styling */
+.tweet-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circle shape */
+  margin-right: 10px;
+}
+
+/* User info (username, handle, tweet time) */
+.user-info {
+  display: flex;
+  flex-direction: row;
+  margin: 4px;
+}
+
+.username {
+  font-weight: bold;
+  color: #333333;
+}
+
+.handle {
+  color: #888888;
+  font-size: 0.9em;
+}
+
+.tweet-time {
+  color: #888888;
+  font-size: 0.8em;
+}
+
+/* Tweet content */
+.tweet-content {
+  margin-top: 10px;
+  color: #333333;
+}
+
+.tweet-content p {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Tweet actions (reply, retweet, like buttons) */
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #1da1f2; /* Twitter's brand color */
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.action-btn:hover {
+  color: #006bb3; /* Darker blue when hovered */
+}

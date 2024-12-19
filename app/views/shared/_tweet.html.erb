@@ -1,0 +1,18 @@
+<div class="tweet-card mt-3">
+  <div class="tweet-header">
+    <img class="profile-pic" src="profile-picture.jpg" alt="User's profile picture" />
+    <div class="user-info ">
+      <span class="username m-1"><%= tweet.user.username %></span>
+      <span class="handle m-1">@<%= tweet.user.username %></span>
+      <span class="tweet-time m-1">2m ago</span>
+    </div>
+  </div>
+  <div class="tweet-content">
+    <p><%= tweet.description %></p>
+  </div>
+  <div class="tweet-actions">
+    <i class="fa-regular fa-comment"></i>
+    <i class="fa-solid fa-retweet"></i>
+    <i class="fa-regular fa-heart"></i>
+  </div>
+</div>
