@@ -1,12 +1,16 @@
-<div class="tweet-form-container">
-  <div class="tweet-form-header">
-    <img src="profile-picture.jpg" alt="User's Profile" class="profile-pic">
-    <h5>What's Happening?</h5>
-  </div>
-  <div class="tweet-form-footer">
-    <%= simple_form_for [@user, @tweet] do |f| %>
-      <%= f.input :description, label: false, placeholder: "Write your tweet...", as: :text, input_html: {rows: 2}, wrapper: false %>
-      <%= f.button :submit, 'Tweet', class: 'btn btn-primary' %>
-    <% end %>
+<div class="tweet-form-container row">
+  <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="" class="tweet-form-pic col-1">
+  <div class="col">
+    <div class="tweet-form-header">
+      <h5>What's Happening?</h5>
+    </div>
+    <div>
+      <%= simple_form_for [@user, @tweet] do |f| %>
+        <%= f.input :description, label: false, placeholder: "Write your tweet...", as: :text, input_html: {rows: 2}, wrapper: false %>
+      </div>
+      <div class="tweet-form-footer">
+        <%= f.button :submit, 'Tweet', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>

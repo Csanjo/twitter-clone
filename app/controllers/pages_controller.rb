@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       @user.tweets.each do |tweet|
         @tweets << tweet
       end
-      @tweets = @tweets.sort_by { |tweet| tweet.created_at}.reverse
+      @tweets = @tweets.sort_by { |tweet| tweet.created_at}.reverse.take(5)
     end
   end
 
