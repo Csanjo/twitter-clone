@@ -6,9 +6,9 @@
       <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
     <% end %>
     <div class="user-info ">
-      <span class="username m-1"><%= tweet.user.username %></span>
+      <span class="username m-1" ><%= link_to tweet.user.username, user_path(tweet.user)  %></span>
       <span class="handle m-1">@<%= tweet.user.username %></span>
-      <span class="tweet-time m-1">2m ago</span>
+      <span class="tweet-time m-1"><%= time_ago_in_words(tweet.created_at)  %> ago</span>
     </div>
   </div>
   <div class="tweet-content">

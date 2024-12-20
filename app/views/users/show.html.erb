@@ -1,0 +1,38 @@
+<div class="container text-center mt-3">
+  <div class="row align-items-start">
+    <div class="col-3 main">
+      One of three columns
+    </div>
+    <div class="col-5 main">
+      <div class="d-flex justify-content-start ">
+        <div>
+          <%= link_to 'javascript:history.back()', class: 'back-link' do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+        </div>
+        <div class="px-2">
+          <span><strong><%=@user.username %></strong></span>
+          <br>
+          <span class="d-flex justify-content-start handle m-1"><%= @user.tweets.count %> Tweets</span>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
+        <% else %>
+          <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
+        <% end %>
+      </div>
+      <hr>
+      <div>
+        <% @tweets.each do |tweet| %>
+          <%= render partial: "shared/tweet", locals: { tweet: tweet } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-3 main">
+      One of three columns
+    </div>
+  </div>
+</div>

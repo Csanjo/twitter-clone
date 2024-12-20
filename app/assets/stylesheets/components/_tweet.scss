@@ -5,9 +5,14 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Style for the tweet card */
 .tweet-card {
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   width: 100%;
   padding: 15px;
   font-family: Arial, sans-serif;
@@ -24,7 +29,7 @@
 .tweet-pic {
   width: 40px;
   height: 40px;
-  border-radius: 50%; /* Circle shape */
+  border-radius: 50%;
   margin-right: 10px;
 }
 
@@ -36,6 +41,7 @@
 }
 
 .username {
+  text-decoration: none;
   font-weight: bold;
   color: #333333;
 }
@@ -72,12 +78,12 @@
 .action-btn {
   background: none;
   border: none;
-  color: #1da1f2; /* Twitter's brand color */
+  color: #1da1f2;
   font-size: 1.2em;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .action-btn:hover {
-  color: #006bb3; /* Darker blue when hovered */
+  color: #006bb3;
 }
