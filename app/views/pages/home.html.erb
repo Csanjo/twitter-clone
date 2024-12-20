@@ -4,7 +4,9 @@
       One of three columns
     </div>
     <div class="col-5 main">
-      <%= render partial: "shared/newtweet"  %>
+      <% if user_signed_in? %>
+        <%= render partial: "shared/newtweet"  %>
+      <% end %>
       <% @tweets.each do |tweet| %>
         <%= render partial: "shared/tweet", locals: { tweet: tweet } %>
       <% end %>
