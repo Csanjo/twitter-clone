@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :favorites
+  has_many_attached :photos
 
   has_many :followed_users, foreign_key: :follower_id, class_name: "Following"
 
