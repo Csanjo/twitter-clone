@@ -1,6 +1,6 @@
 <div class="tweet-card">
   <div class="tweet-header">
-    <img class="tweet-pic" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="User's profile picture" />
+    <%= image_tag "blank-profile", alt: "Profile", class: "tweet-form-pic col-1" %>
     <div class="user-info ">
       <span class="username m-1"><%= tweet.user.username %></span>
       <span class="handle m-1">@<%= tweet.user.username %></span>
