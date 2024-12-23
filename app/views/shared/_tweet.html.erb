@@ -3,7 +3,7 @@
     <% if tweet.user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
     <% else %>
-      <%= image_tag "blank-profile", class: "tweet-form-pic col-1" %>
+      <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
     <% end %>
     <div class="user-info ">
       <span class="username m-1"><%= tweet.user.username %></span>
