@@ -19,7 +19,7 @@
       <hr>
       <div>
         <% if @user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
+          <%= cl_image_tag @user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
         <% else %>
           <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
         <% end %>
