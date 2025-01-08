@@ -16,4 +16,12 @@ Rails.application.routes.draw do
   resources :users do
     resource :tweets
   end
+
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get :follow
+      get :unfollow
+    end
+    resources :tweets, only: [:index, :create]
+  end
 end

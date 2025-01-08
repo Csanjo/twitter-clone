@@ -1,5 +1,9 @@
 <div class="tweet-form-container row">
-  <%= image_tag "blank-profile.jpg", alt: "Profile", class: "tweet-form-pic col-1" %>
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, height: 1200, width: 1200, crop: :fill, class: "tweet-form-pic col-1" %>
+  <% else %>
+    <%= image_tag "blank-profile.jpg", alt: "Profile", class: "tweet-form-pic col-1" %>
+  <% end %>
   <div class="col">
     <div class="tweet-form-header">
       <h5>What's Happening?</h5>

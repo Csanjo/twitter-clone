@@ -17,12 +17,29 @@
         </div>
       </div>
       <hr>
-      <div>
-        <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
-        <% else %>
-          <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
-        <% end %>
+      <div class="d-flex justify-content-between">
+        <div>
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
+          <% else %>
+            <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
+          <% end %>
+        </div>
+        <div>
+          <button type="button" class="following_btn">Follow</button>
+        </div>
+      </div>
+      <div class="d-flex justify-content-start">
+        <span><strong><%=@user.username %></strong></span>
+      </div>
+      <div class="d-flex justify-content-start handle">
+        <span>@<%=@user.username%></span>
+      </div>
+      <div class="d-flex justify-content-start handle">
+        <span>Joined <%=@user.created_at.strftime('%B %Y')  %></span>
+      </div>
+      <div class="d-flex justify-content-start handle">
+        <span><%=@user.followees.count %> Following <%=@user.followers.count  %> Followers</span>
       </div>
       <hr>
       <div>

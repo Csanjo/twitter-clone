@@ -1,0 +1,18 @@
+.following_btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: white;
+  background-color:  #008AD8;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.following_btn:hover {
+  background-color: #007BB5;
+}
+
+.following_btn:active {
+  background-color: #006B97;
+}
