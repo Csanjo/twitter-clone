@@ -1,0 +1,31 @@
+.heart-btn {
+  background-color: transparent;
+  border: none;   /* Remove border */
+  padding: 0;     /* Remove any default padding */
+  margin: 0;      /* Remove any margin */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  vertical-align: middle;  /* Ensure the icon is centered */
+}
+
+.heart-btn:hover {
+  color: red;
+}
+
+.heart-active {
+  color: red;
+}
+
+
+.icon-btn {
+  background-color: transparent;
+  border: none;
+
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}

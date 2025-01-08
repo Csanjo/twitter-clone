@@ -7,9 +7,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :tweets
-  has_many :favorites
-  has_one_attached :photo
+  has_many :tweets, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_one_attached :photo, dependent: :destroy
 
   has_many :followed_users, foreign_key: :follower_id, class_name: "Following"
 
@@ -29,5 +29,9 @@ class User < ApplicationRecord
 
   def following?(user)
     followees.include?(user)
+  end
+
+  def liked?(tweet)
+    favorites.exists?(tweet_id: tweet)
   end
 end

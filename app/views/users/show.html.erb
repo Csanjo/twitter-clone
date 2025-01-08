@@ -5,43 +5,44 @@
     </div>
     <div class="col-5 main">
       <div class="d-flex justify-content-start ">
-        <div>
+        <div class="p-2">
           <%= link_to 'javascript:history.back()', class: 'back-link' do %>
             <i class="fas fa-arrow-left"></i>
           <% end %>
         </div>
-        <div class="px-2">
+        <div class="p-1">
           <span><strong><%=@user.username %></strong></span>
           <br>
-          <span class="d-flex justify-content-start handle m-1"><%= @user.tweets.count %> Tweets</span>
+          <span class="d-flex justify-content-start handle"><%= @user.tweets.count %> Tweets</span>
         </div>
       </div>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <div>
-          <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
-          <% else %>
-            <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
-          <% end %>
+      <div class="gray"></div>
+      <div class="m-3">
+        <div class="d-flex justify-content-between">
+          <div>
+            <% if @user.photo.attached? %>
+              <%= cl_image_tag @user.photo.key, height: 1200, width: 1200, crop: :fill, class: "avatar" %>
+            <% else %>
+              <%= image_tag "blank-profile.jpg", class: "tweet-form-pic col-1" %>
+            <% end %>
+          </div>
+          <div>
+            <%= button_tag 'Follow', class: 'following_btn', data: { controller: 'button', action: 'click->button#toggleActive', target: 'button.button' } %>
+          </div>
         </div>
-        <div>
-          <button type="button" class="following_btn">Follow</button>
+        <div class="d-flex justify-content-start">
+          <span><strong><%=@user.username %></strong></span>
+        </div>
+        <div class="d-flex justify-content-start handle">
+          <span>@<%=@user.username%></span>
+        </div>
+        <div class="d-flex justify-content-start handle">
+          <span>Joined <%=@user.created_at.strftime('%B %Y')  %></span>
+        </div>
+        <div class="d-flex justify-content-start handle">
+          <span><%=@user.followees.count %> Following <%=@user.followers.count  %> Followers</span>
         </div>
       </div>
-      <div class="d-flex justify-content-start">
-        <span><strong><%=@user.username %></strong></span>
-      </div>
-      <div class="d-flex justify-content-start handle">
-        <span>@<%=@user.username%></span>
-      </div>
-      <div class="d-flex justify-content-start handle">
-        <span>Joined <%=@user.created_at.strftime('%B %Y')  %></span>
-      </div>
-      <div class="d-flex justify-content-start handle">
-        <span><%=@user.followees.count %> Following <%=@user.followers.count  %> Followers</span>
-      </div>
-      <hr>
       <div>
         <% @tweets.each do |tweet| %>
           <%= render partial: "shared/tweet", locals: { tweet: tweet } %>

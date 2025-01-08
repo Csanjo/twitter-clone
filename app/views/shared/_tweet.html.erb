@@ -1,3 +1,4 @@
+<hr>
 <div class="tweet-card">
   <div class="tweet-header">
     <% if tweet.user.photo.attached? %>
@@ -15,9 +16,14 @@
     <p><%= tweet.description %></p>
   </div>
   <div class="tweet-actions">
-    <i class="fa-regular fa-comment"></i>
-    <i class="fa-solid fa-retweet"></i>
-    <i class="fa-regular fa-heart"></i>
+    <%= button_tag type: 'button', class: 'icon-btn' do %>
+      <i class="fa-regular fa-comment"></i>
+    <% end %>
+    <%= button_tag type: 'button', class: 'icon-btn' do %>
+      <i class="fa-solid fa-retweet"></i>
+    <% end %>
+    <%= button_tag type: 'button', id: 'heartButton', class: 'heart-btn', data: { controller: 'fav', action: 'click->fav#toggleHeart' } do %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
   </div>
 </div>
-<hr>

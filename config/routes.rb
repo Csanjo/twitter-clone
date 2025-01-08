@@ -24,4 +24,10 @@ Rails.application.routes.draw do
     end
     resources :tweets, only: [:index, :create]
   end
+
+  resources :tweets, only: [] do
+    member do
+      get :like
+    end
+  end
 end

@@ -10,22 +10,22 @@ a {
   color: inherit;
 }
 
-/* Style for the tweet card */
+
 .tweet-card {
   background-color: #ffffff;
   width: 100%;
-  padding: 15px;
+  padding: 0px 15px;
   font-family: Arial, sans-serif;
 }
 
-/* Tweet header styling */
+
 .tweet-header {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-/* Profile picture */
+
 .tweet-pic {
   width: 40px;
   height: 40px;
@@ -33,7 +33,7 @@ a {
   margin-right: 10px;
 }
 
-/* User info (username, handle, tweet time) */
+
 .user-info {
   display: flex;
   flex-direction: row;
@@ -56,7 +56,6 @@ a {
   font-size: 0.8em;
 }
 
-/* Tweet content */
 .tweet-content {
   margin-top: 10px;
   color: #333333;
@@ -68,7 +67,7 @@ a {
   line-height: 1.4;
 }
 
-/* Tweet actions (reply, retweet, like buttons) */
+
 .tweet-actions {
   display: flex;
   justify-content: space-between;
@@ -78,7 +77,7 @@ a {
 .action-btn {
   background: none;
   border: none;
-  color: #1da1f2;
+  color: #07a4ff;
   font-size: 1.2em;
   cursor: pointer;
   transition: color 0.2s;

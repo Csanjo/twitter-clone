@@ -10,6 +10,14 @@ class TweetsController < ApplicationController
     end
   end
 
+  def like
+    @tweet = Tweet.find(params[:id])
+    if !current_user.liked?(params[:id])
+      @like = @tweet.favorites.create(user_id: current_user.id)
+    else
+      @unlike = @tweet.favorites.find_by(user_id:  current_user.id).destroy
+    end
+  end
 
   private
 
